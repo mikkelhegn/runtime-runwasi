@@ -1,0 +1,16 @@
+spin_manifest_version = "1"
+authors = ["Mikkel Mørk Hegnhøj <mikkel@fermyon.com>"]
+description = ""
+name = "redis-runtime"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "redis-runtime"
+source = "target/redis-runtime.wasm"
+exclude_files = ["**/node_modules"]
+key_value_stores = ["foo"]
+[component.trigger]
+route = "/..."
+[component.build]
+command = "npm run build"
